@@ -1,69 +1,76 @@
-# React + TypeScript + Vite
+# Paint App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a simple paint application built with **React**, **TypeScript**, and **Vite**.
 
-Currently, two official plugins are available:
+## Project Structure
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```
+paint/
+├── public/               # Static assets
+├── src/                  # Source code
+│   ├── assets/           # Images, icons, etc.
+│   ├── components/       # React components
+│   ├── hooks/            # Custom React hooks
+│   ├── utils/            # Utility functions
+│   ├── App.tsx           # Main App component
+│   ├── main.tsx          # Entry point
+│   └── index.css         # Global styles
+├── .eslintrc.cjs         # ESLint configuration
+├── tsconfig.json         # TypeScript configuration
+├── vite.config.ts        # Vite configuration
+├── package.json          # Project metadata and scripts
+└── README.md             # Project documentation
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Getting Started
+
+1. **Install dependencies:**
+
+   ```sh
+   npm install
+   ```
+
+2. **Run the development server:**
+
+   ```sh
+   npm run dev
+   ```
+
+3. **Build for production:**
+
+   ```sh
+   npm run build
+   ```
+
+4. **Preview the production build:**
+   ```sh
+   npm run preview
+   ```
+
+## ESLint Configuration
+
+The project uses ESLint with recommended settings for TypeScript and React. You can expand the configuration as needed. Example:
 
 ```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
+// .eslintrc.cjs
+module.exports = {
+  extends: [
+    'eslint:recommended',
+    'plugin:react/recommended',
+    'plugin:@typescript-eslint/recommended',
+  ],
+  parser: '@typescript-eslint/parser',
+  plugins: ['react', '@typescript-eslint'],
+  rules: {
+    // Custom rules here
   },
-])
+};
 ```
+
+## Additional Resources
+
+- [Vite Documentation](https://vitejs.dev/)
+- [React Documentation](https://react.dev/)
+- [TypeScript Documentation](https://www.typescriptlang.org/)
+
+---
