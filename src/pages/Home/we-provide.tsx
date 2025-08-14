@@ -5,7 +5,7 @@ import Button from '@/components/ui/button';
 
 const WeProvide = () => {
   return (
-    <section className="relative pb-44 lg:pb-20 text-white bg-website-yellow">
+    <section className="relative pt-[400px] md:pt-56 pb-44 lg:pb-20 text-white bg-website-yellow">
       <Container className="grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
         <div className="order-2 md:order-1 max-w-[615px]">
           <h1 className="font-bold mb-4 font-segoe-ui text-foreground text-3xl md:text-[50px] md:leading-[60px]">

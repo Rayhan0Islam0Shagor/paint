@@ -5,7 +5,7 @@ import { cn } from '@/lib/utils';
 
 const FeatureSection = () => {
   return (
-    <section className="text-white pb-44 lg:pb-56 lg:min-h-screen bg-foreground relative">
+    <section className="text-white pb-[400px] lg:pb-[500px] lg:min-h-screen bg-foreground relative">
       <Container className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
         <div className="max-w-[530px] mx-auto">
           <p className="text-website-yellow font-segoe-ui text-xl font-normal tracking-[2%]">
