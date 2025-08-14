@@ -2,7 +2,7 @@ import Navbar from './components/ui/Navbar';
 import CallToAction from './pages/Home/call-to-action';
 import FeatureSection from './pages/Home/feature-section';
 import HeroSection from './pages/Home/hero-section';
-import Testimonial from './pages/Home/testimonial';
+import Testimonial2 from './pages/Home/Testimonial2';
 import WeProvide from './pages/Home/we-provide';
 
 function App() {
@@ -12,7 +12,8 @@ function App() {
       <HeroSection />
       <div className="relative">
         <FeatureSection />
-        <Testimonial />
+        {/* <Testimonial /> */}
+        <Testimonial2 />
       </div>
       <WeProvide />
       <CallToAction />

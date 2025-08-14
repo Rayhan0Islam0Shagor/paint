@@ -1,6 +1,6 @@
 'use client';
 import { useState, useRef, useEffect } from 'react';
-import { ChevronDown, User } from 'lucide-react';
+import { ChevronDown } from 'lucide-react';
 import Container from '../Container';
 
 const Navbar = () => {
@@ -10,11 +10,16 @@ const Navbar = () => {
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   // A static user object for display purposes
-  const user = {
-    email: 'user@example.com',
-    displayName: 'User',
-    photoURL: 'https://placehold.co/100x100/EFEFEF/4A4A4A?text=U',
-  };
+  const languages = [
+    {
+      lang: 'English',
+      icon: '🇬🇧',
+    },
+    {
+      lang: 'Bangla',
+      icon: '🇧🇩',
+    },
+  ];
 
   // Effect to handle clicks outside the dropdown to close it
   useEffect(() => {
@@ -110,28 +115,17 @@ const Navbar = () => {
                   onMouseEnter={handleMouseEnter}
                   onMouseLeave={handleMouseLeave}
                 >
-                  <div className="px-4 py-3">
-                    <div className="flex items-center space-x-3">
-                      <div className="w-10 h-10 rounded-full overflow-hidden bg-gray-800 flex items-center justify-center border border-gray-700">
-                        {user.photoURL ? (
-                          <img
-                            src={user.photoURL}
-                            alt="User avatar"
-                            className="w-full h-full object-cover"
-                          />
-                        ) : (
-                          <User className="h-6 w-6 text-black" />
-                        )}
-                      </div>
-                      <div className="flex-1 min-w-0">
+                  <div className="px-4 py-3 space-y-2">
+                    {languages.map((lang, index) => (
+                      <div key={index} className="flex items-center space-x-3">
+                        <div className="w-9 h-6 rounded-lg overflow-hidden  flex items-center justify-center border border-gray-700">
+                          <span>{lang.icon}</span>
+                        </div>
                         <p className="text-black font-medium truncate">
-                          {user.displayName || 'User'}
-                        </p>
-                        <p className="text-black text-sm truncate">
-                          {user.email}
+                          {lang.lang}
                         </p>
                       </div>
-                    </div>
+                    ))}
                   </div>
                 </div>
               )}
