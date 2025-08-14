@@ -22,6 +22,12 @@ paint/
 └── README.md             # Project documentation
 ```
 
+### Live link
+
+[\[https://paint-app-website.netlify.app/](https://paint-job.netlify.app/)
+
+---
+
 ## Getting Started
 
 1. **Install dependencies:**
